@@ -1,3 +1,5 @@
+/*CREATE database Escuela;*/
+USE Escuela;
 CREATE TABLE tbl_escuela(
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	nombre varchar(40) NOT NULL, 
