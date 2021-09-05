@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -16,6 +17,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
      */
     public MasterWindows2() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -28,6 +30,10 @@ public class MasterWindows2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel6 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        jDialog2 = new javax.swing.JDialog();
+        jDialog3 = new javax.swing.JDialog();
+        jDialog4 = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -69,6 +75,50 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
         jLabel6.setText("jLabel6");
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog2Layout = new javax.swing.GroupLayout(jDialog2.getContentPane());
+        jDialog2.getContentPane().setLayout(jDialog2Layout);
+        jDialog2Layout.setHorizontalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog2Layout.setVerticalGroup(
+            jDialog2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog3Layout = new javax.swing.GroupLayout(jDialog3.getContentPane());
+        jDialog3.getContentPane().setLayout(jDialog3Layout);
+        jDialog3Layout.setHorizontalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog3Layout.setVerticalGroup(
+            jDialog3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog4Layout = new javax.swing.GroupLayout(jDialog4.getContentPane());
+        jDialog4.getContentPane().setLayout(jDialog4Layout);
+        jDialog4Layout.setHorizontalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog4Layout.setVerticalGroup(
+            jDialog4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel3.setText("Codigo Escuela:");
@@ -84,6 +134,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
         jLabel13.setText("Creador: ");
 
         guardarCrear.setText("Guardar");
+        guardarCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         guardarCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarCrearActionPerformed(evt);
@@ -187,6 +238,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
         jLabel8.setText("Creador:");
 
         buscarActualizar.setText("Buscar");
+        buscarActualizar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buscarActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buscarActualizarActionPerformed(evt);
@@ -194,6 +246,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
         });
 
         actualizarButton.setText("Actualizar");
+        actualizarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         actualizarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 actualizarButtonActionPerformed(evt);
@@ -265,6 +318,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Actualizar", jPanel2);
 
         borrarButton.setText("Borrar");
+        borrarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         borrarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 borrarButtonActionPerformed(evt);
@@ -307,6 +361,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
         jTabbedPane1.addTab("Borrar", jPanel3);
 
         consultarButton.setText("Consultar");
+        consultarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         consultarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 consultarButtonActionPerformed(evt);
@@ -369,6 +424,13 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void consultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarButtonActionPerformed
         // TODO add your handling code here:
+        codigoConsultar.getText();
+        if (codigoConsultar.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null,"No se permite campo vacio","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else {
+            
+        }
+        
     }//GEN-LAST:event_consultarButtonActionPerformed
 
     private void codigoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoConsultarActionPerformed
@@ -377,10 +439,19 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
         // TODO add your handling code here:
+        codigoBorrar.getText();
+        if (codigoBorrar.getText().isBlank()) {
+            JOptionPane.showMessageDialog(null,"No se permite campo vacio","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else {
+            
+        }
+
     }//GEN-LAST:event_borrarButtonActionPerformed
 
     private void buscarActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActualizarActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_buscarActualizarActionPerformed
 
     private void aniosCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aniosCrearActionPerformed
@@ -393,10 +464,29 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void guardarCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCrearActionPerformed
         // TODO add your handling code here:
+        codigoCrear.getText();
+        aniosCrear.getText();
+        fechaCrear.getText();
+        nombreCrear.getText();
+        habilidadCrear.getText();
+        creadorCrear.getText();
+        if (codigoCrear.getText().isBlank() || aniosCrear.getText().isBlank() || fechaCrear.getText().isBlank() || nombreCrear.getText().isBlank() || habilidadCrear.getText().isBlank() || creadorCrear.getText().isBlank() ) {
+            JOptionPane.showMessageDialog(null,"Ingresar los campos que esten vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
+        }
+        //jDialog1.setVisible(true);
+        //jDialog1.setTitle("Creacion");
+        //jDialog1.setContentPane("Colegio se ha creado satisfactoriamente");
+        
+        //jDialog1.setLocation(500, 100);
+        //jDialog1.setSize(300, 300);
+        
     }//GEN-LAST:event_guardarCrearActionPerformed
 
     private void codigoCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoCrearActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_codigoCrearActionPerformed
 
     private void creadorCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creadorCrearActionPerformed
@@ -405,6 +495,17 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
         // TODO add your handling code here:
+        codigoActualizar.getText();
+        aniosActualizar.getText();
+        fechaActualizar.getText();
+        nombreActualizar.getText();
+        habilidadActualizar.getText();
+        creadorActualizar.getText();
+        if (codigoActualizar.getText().isBlank() || aniosActualizar.getText().isBlank() || fechaActualizar.getText().isBlank() || nombreActualizar.getText().isBlank() || habilidadActualizar.getText().isBlank() || creadorActualizar.getText().isBlank() ) {
+            JOptionPane.showMessageDialog(null,"Ingresar los campos que esten vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_actualizarButtonActionPerformed
 
     /**
@@ -461,6 +562,10 @@ public class MasterWindows2 extends javax.swing.JFrame {
     private javax.swing.JButton guardarCrear;
     private javax.swing.JTextField habilidadActualizar;
     private javax.swing.JTextField habilidadCrear;
+    private javax.swing.JDialog jDialog1;
+    private javax.swing.JDialog jDialog2;
+    private javax.swing.JDialog jDialog3;
+    private javax.swing.JDialog jDialog4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
