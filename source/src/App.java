@@ -1,8 +1,9 @@
-import view.MasterWindow;
+import access.EscuelaDAO;
+import view.MasterWindows2;
 
 public class App {
 	public static void main(String[] args) {
-		MasterWindow masterWindow = new MasterWindow();
-		masterWindow.start();
+		System.out.println(new EscuelaDAO().findAll());
+		new MasterWindows2().setVisible(true);
 	}
 }
