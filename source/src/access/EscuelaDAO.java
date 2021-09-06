@@ -196,4 +196,8 @@ public class EscuelaDAO {
     	
     	return result;
     }
+    
+    public boolean exist(int id) {
+    	return Optional.ofNullable(findById(id)).isPresent();
+    }
 }
