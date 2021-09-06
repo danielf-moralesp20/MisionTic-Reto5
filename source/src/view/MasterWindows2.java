@@ -479,6 +479,8 @@ public class MasterWindows2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Fecha erronea","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else if(!FieldUtils.isNumber(codigo_crear) || !FieldUtils.isNumber(anios_crear)) {
             JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(FieldUtils.maxLength(10, nombre_crear) || FieldUtils.maxLength(10, habilidad_crear) || FieldUtils.maxLength(10, creador_crear)) {
+            JOptionPane.showMessageDialog(null,"Excediste el numero de caracteres","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
         }
@@ -515,6 +517,8 @@ public class MasterWindows2 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Fecha erronea","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else if(!FieldUtils.isNumber(codigo_actualizar) || !FieldUtils.isNumber(anios_actualizar)) {
             JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(FieldUtils.maxLength(10, nombre_actualizar) || FieldUtils.maxLength(10, habilidad_actualizar) || FieldUtils.maxLength(10, creador_actualizar)) {
+            JOptionPane.showMessageDialog(null,"Excediste el numero de caracteres","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
         }
