@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -28,7 +29,7 @@ public class ConnectionDB {
         JSONParser parser = new JSONParser();
         
         try {
-            String credentials_path = System.getProperty("user.dir") + "/src/utils/db_credentials.json";
+            String credentials_path = new File("src/utils/db_credentials.json").getAbsolutePath();
             JSONObject jsonObject = (JSONObject)parser.parse(new FileReader(credentials_path));
             
             String host     = (String)jsonObject.get("db_ip");

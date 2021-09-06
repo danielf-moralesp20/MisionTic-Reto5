@@ -1,4 +1,5 @@
 package view;
+
 import javax.swing.JOptionPane;
 
 import controller.MasterWindows2Controller;
@@ -537,6 +538,7 @@ public class MasterWindows2 extends javax.swing.JFrame {
 		return codigoBorrar;
 	}
     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton actualizarButton;
     private javax.swing.JTextField aniosActualizar;
     private javax.swing.JTextField aniosCrear;
@@ -580,4 +582,9 @@ public class MasterWindows2 extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nombreActualizar;
     private javax.swing.JTextField nombreCrear;
+    // End of variables declaration//GEN-END:variables
+
+    public void start() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
