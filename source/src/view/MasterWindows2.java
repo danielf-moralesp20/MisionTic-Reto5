@@ -5,6 +5,7 @@
  */
 package view;
 import javax.swing.JOptionPane;
+import utils.FieldUtils;
 
 /**
  *
@@ -424,8 +425,8 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void consultarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultarButtonActionPerformed
         // TODO add your handling code here:
-        codigoConsultar.getText();
-        if (codigoConsultar.getText().isBlank()) {
+        String codigo_consultar = codigoConsultar.getText();
+        if (codigo_consultar.isBlank() || FieldUtils.isEmpty(codigo_consultar) || FieldUtils.isNumber(codigo_consultar)) {
             JOptionPane.showMessageDialog(null,"No se permite campo vacio","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
             
@@ -439,10 +440,11 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void borrarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_borrarButtonActionPerformed
         // TODO add your handling code here:
-        codigoBorrar.getText();
-        if (codigoBorrar.getText().isBlank()) {
+        String codigo_borrar = codigoBorrar.getText();
+        if (codigo_borrar.isBlank() || FieldUtils.isEmpty(codigo_borrar) || !FieldUtils.isNumber(codigo_borrar)) {
             JOptionPane.showMessageDialog(null,"No se permite campo vacio","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
+            JOptionPane.showMessageDialog(null,"El registro con numero "+codigo_borrar+" ha sido borrado con extio","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
             
         }
 
@@ -464,14 +466,19 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void guardarCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarCrearActionPerformed
         // TODO add your handling code here:
-        codigoCrear.getText();
-        aniosCrear.getText();
-        fechaCrear.getText();
-        nombreCrear.getText();
-        habilidadCrear.getText();
-        creadorCrear.getText();
-        if (codigoCrear.getText().isBlank() || aniosCrear.getText().isBlank() || fechaCrear.getText().isBlank() || nombreCrear.getText().isBlank() || habilidadCrear.getText().isBlank() || creadorCrear.getText().isBlank() ) {
-            JOptionPane.showMessageDialog(null,"Ingresar los campos que esten vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        String codigo_crear =  codigoCrear.getText();
+        String anios_crear = aniosCrear.getText();
+        String fecha_crear = fechaCrear.getText();
+        String nombre_crear = nombreCrear.getText();
+        String habilidad_crear = habilidadCrear.getText();
+        String creador_crear = creadorCrear.getText();
+        if (FieldUtils.isEmpty(codigo_crear) || FieldUtils.isEmpty(anios_crear) || FieldUtils.isEmpty(fecha_crear) || FieldUtils.isEmpty(nombre_crear)
+          || FieldUtils.isEmpty(habilidad_crear) || FieldUtils.isEmpty(creador_crear)) {
+            JOptionPane.showMessageDialog(null,"No se permiten campos vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(FieldUtils.isDate(fecha_crear)) {
+            JOptionPane.showMessageDialog(null,"Fecha erronea","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(!FieldUtils.isNumber(codigo_crear) || !FieldUtils.isNumber(anios_crear)) {
+            JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
         }
@@ -495,14 +502,19 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
     private void actualizarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarButtonActionPerformed
         // TODO add your handling code here:
-        codigoActualizar.getText();
-        aniosActualizar.getText();
-        fechaActualizar.getText();
-        nombreActualizar.getText();
-        habilidadActualizar.getText();
-        creadorActualizar.getText();
-        if (codigoActualizar.getText().isBlank() || aniosActualizar.getText().isBlank() || fechaActualizar.getText().isBlank() || nombreActualizar.getText().isBlank() || habilidadActualizar.getText().isBlank() || creadorActualizar.getText().isBlank() ) {
-            JOptionPane.showMessageDialog(null,"Ingresar los campos que esten vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        String codigo_actualizar = codigoActualizar.getText();
+        String anios_actualizar = aniosActualizar.getText();
+        String fecha_actualizar = fechaActualizar.getText();
+        String nombre_actualizar = nombreActualizar.getText();
+        String habilidad_actualizar = habilidadActualizar.getText();
+        String creador_actualizar = creadorActualizar.getText();
+        if (FieldUtils.isEmpty(codigo_actualizar) || FieldUtils.isEmpty(anios_actualizar) || FieldUtils.isEmpty(fecha_actualizar) || FieldUtils.isEmpty(nombre_actualizar)
+          || FieldUtils.isEmpty(habilidad_actualizar) || FieldUtils.isEmpty(creador_actualizar)) {
+            JOptionPane.showMessageDialog(null,"No se permiten campos vacios","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(FieldUtils.isDate(fecha_actualizar)) {
+            JOptionPane.showMessageDialog(null,"Fecha erronea","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
+        } else if(!FieldUtils.isNumber(codigo_actualizar) || !FieldUtils.isNumber(anios_actualizar)) {
+            JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","¡ALERTA!",JOptionPane.WARNING_MESSAGE);
         } else {
             JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
         }
