@@ -17,4 +17,8 @@ public class FieldUtils {
 	public static boolean isDate(String val) {
 		return !isEmpty(val) && val.matches("^([1-9]\\d{3,3}|9\\d{3,3})-(1[0-2]|0?[1-9])-(3[0-1]|[1-2][0-9]|0?[1-9])");
 	}
+	
+	public static boolean maxLength(int max, String val) {
+		return val.length() <= max;		
+	}
 }
