@@ -40,14 +40,8 @@ public class ConnectionDB {
             
             conn = DriverManager.getConnection(dbURL, username, password);
         } 
-        catch(SQLException ex) {
-                
+        catch(SQLException | ParseException | IOException ex) {  
             ex.printStackTrace();
-        } catch (ParseException ex) {
-            ex.printStackTrace();
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        
         }
         
         return conn;
