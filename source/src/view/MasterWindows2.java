@@ -204,8 +204,8 @@ public class MasterWindows2 extends javax.swing.JFrame {
                     .addComponent(codigoCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nombreCrear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -318,34 +318,34 @@ public class MasterWindows2 extends javax.swing.JFrame {
 
         borrarButton.setText("Borrar");
         borrarButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        borrarButton.addActionListener((event) -> controller.actionEventBtnBorrar(event));
         
-        jLabel15.setText("Codigo escuela:");
+
+        jLabel15.setText("Codigo:");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
-        	jPanel3Layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(jPanel3Layout.createSequentialGroup()
-        			.addGap(34)
-        			.addGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING, false)
-        				.addComponent(jLabel15, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        				.addComponent(codigoBorrar, Alignment.LEADING, GroupLayout.DEFAULT_SIZE, 98, Short.MAX_VALUE))
-        			.addPreferredGap(ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
-        			.addComponent(borrarButton)
-        			.addGap(100))
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(codigoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 181, Short.MAX_VALUE)
+                .addComponent(borrarButton)
+                .addGap(100, 100, 100))
         );
         jPanel3Layout.setVerticalGroup(
-        	jPanel3Layout.createParallelGroup(Alignment.LEADING)
-        		.addGroup(jPanel3Layout.createSequentialGroup()
-        			.addGap(9)
-        			.addComponent(jLabel15)
-        			.addPreferredGap(ComponentPlacement.UNRELATED)
-        			.addGroup(jPanel3Layout.createParallelGroup(Alignment.TRAILING)
-        				.addComponent(codigoBorrar, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        				.addComponent(borrarButton))
-        			.addContainerGap(223, Short.MAX_VALUE))
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(codigoBorrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(borrarButton))
+                .addContainerGap(223, Short.MAX_VALUE))
         );
-        jPanel3.setLayout(jPanel3Layout);
 
         jTabbedPane1.addTab("Borrar", jPanel3);
 
