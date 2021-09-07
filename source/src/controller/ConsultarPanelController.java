@@ -20,8 +20,11 @@ public class ConsultarPanelController {
 	public void actionEventBtnConsultar(ActionEvent evt) {
 		String codigo_consultar = view.getTxtFieldCod().getText();
 		
-        if (codigo_consultar.isBlank() || FieldUtils.isEmpty(codigo_consultar) || FieldUtils.isNumber(codigo_consultar)) {
+        if (codigo_consultar.isBlank() || FieldUtils.isEmpty(codigo_consultar)) {
             JOptionPane.showMessageDialog(null,"No se permite campo vacio","ALERTA",JOptionPane.WARNING_MESSAGE);
+        } else if(!FieldUtils.isNumber(codigo_consultar)) {
+        	JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE);
+      
         } else {
             
         }

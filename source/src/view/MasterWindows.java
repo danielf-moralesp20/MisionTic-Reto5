@@ -11,6 +11,7 @@ public class MasterWindows extends JFrame {
 	private static final long serialVersionUID = 7922888014138959268L;
 
     public MasterWindows() {
+    	setTitle("Reto 5 - CRUD JAVA");
         initComponents();
     }
 

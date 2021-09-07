@@ -90,7 +90,7 @@ public class ConsultarPanel extends JPanel {
         };
 
 		public TableModel() {
-			super(new Object [][] {}, new String [] {"Codigo", "Nombre", "Años servicio", "Fecha inicio", "Habilidad", "Creador"});
+			super(new Object [][] {}, new String [] {"Codigo", "Nombre", "Anios servicio", "Fecha inicio", "Habilidad", "Creador"});
 		}
         
 		public Class<?> getColumnClass(int columnIndex) {

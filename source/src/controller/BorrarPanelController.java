@@ -21,7 +21,7 @@ public class BorrarPanelController {
 		String cod = view.getTxtFieldCod().getText();
 		
         if (FieldUtils.isEmpty(cod))
-            JOptionPane.showMessageDialog(null,"Por favor ingresa todos los campos en el formulario", "ALERTA", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null,"No se permiten campos vacios", "ALERTA", JOptionPane.WARNING_MESSAGE);
         else if (!FieldUtils.isNumber(cod)) 
         	JOptionPane.showMessageDialog(null, "Tipo de dato incorrecto. Ingresa un codigo de escuela correcto.", "ALERTA", JOptionPane.WARNING_MESSAGE);
         else if (!repo.exist(Integer.parseInt(cod)))
