@@ -1,12 +1,12 @@
 package controller;
 
 import java.awt.event.ActionEvent;
-
 import javax.swing.JOptionPane;
 
 import access.EscuelaDAO;
 import utils.FieldUtils;
 import view.CrearPanel;
+import model.EscuelaModel;
 
 public class CrearPanelController {
 	private CrearPanel view;
@@ -19,7 +19,7 @@ public class CrearPanelController {
 	
 	public void actionEventBtnGuardar(ActionEvent evt) {
 		String codigo_crear =  view.getTxtFieldCod().getText();
-        String anios_crear = view.getTxtFieldAnios().getText();
+        String anios_crear  = view.getTxtFieldAnios().getText();
         String fecha_crear = view.getTxtFieldFecha().getText();
         String nombre_crear = view.getTxtFieldNombre().getText();
         String habilidad_crear = view.getTxtFieldHabilidad().getText();
@@ -34,9 +34,15 @@ public class CrearPanelController {
             JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE);
         } else if(!FieldUtils.maxLength(40, nombre_crear) || !FieldUtils.maxLength(40, habilidad_crear) || !FieldUtils.maxLength(20, creador_crear)) {
             JOptionPane.showMessageDialog(null,"Excediste el numero de caracteres","ALERTA",JOptionPane.WARNING_MESSAGE);
+        } else if(repo.exist(Integer.parseInt(codigo_crear))) {
+        	JOptionPane.showMessageDialog(null,"Escuela con el codigo "+codigo_crear+" ya existe en el sistema","ALERTA",JOptionPane.WARNING_MESSAGE);
+        	
         } else {
-            JOptionPane.showMessageDialog(null,"Escuela ingresada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
+        	EscuelaModel escuelaCrear = new EscuelaModel(Integer.parseInt(codigo_crear),nombre_crear,habilidad_crear,Integer.parseInt(anios_crear),creador_crear,fecha_crear);
+        	boolean success = repo.save(escuelaCrear);
+        	if (success) {
+        		JOptionPane.showMessageDialog(null,"El registro con numero "+codigo_crear+" ha sido creado exitosamente","ALERTA",JOptionPane.INFORMATION_MESSAGE);
+        	}
         }
 	}
-
 }

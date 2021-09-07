@@ -33,7 +33,7 @@ public class BorrarPanelController {
         		view.getTxtFieldCod().setText("");
         	}
         	else      		
-        		JOptionPane.showMessageDialog(null,"Lo sentimos, parece que algo ha salido mal y no hemos podido eliminar el registro","ALERTA",JOptionPane.WARNING_MESSAGE);
+        		JOptionPane.showMessageDialog(null,"Lo sentimos, parece que algo ha salido mal y no hemos podido eliminar el registro","ALERTA",JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

@@ -59,6 +59,7 @@ public class ActualizarPanelController {
 	public void actionEventBtnBuscar(ActionEvent evt) {
 		String cod = view.getTxtFieldCod().getText();
 	     
+
 	    if (FieldUtils.isEmpty(cod)) {
 	        JOptionPane.showMessageDialog(null,"Por favor, ingrese un codigo a buscar","ALERTA",JOptionPane.WARNING_MESSAGE);
 	    } else if(!FieldUtils.isNumber(cod)) {
@@ -68,6 +69,7 @@ public class ActualizarPanelController {
 	    }
 	    else {
 	        EscuelaModel result = repo.findById(Integer.parseInt(cod));
+
 	        
 	        if (Optional.ofNullable(result).isEmpty())
 	        	JOptionPane.showMessageDialog(null, "Lo sentimos algo ha salido mal y no hemos podido obtener los datos relacionados con el codigo " + cod, "ALERTA", JOptionPane.WARNING_MESSAGE);
