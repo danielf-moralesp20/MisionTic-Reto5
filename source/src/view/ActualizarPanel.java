@@ -14,10 +14,12 @@ import controller.ActualizarPanelController;
 public class ActualizarPanel extends JPanel {
 	private static final long serialVersionUID = 554572027412468655L;
 	private ActualizarPanelController controller;
+	private boolean isEditing = false;
 
 	public ActualizarPanel() {
 		controller = new ActualizarPanelController(this);
 		initComponents();
+		updateEnableState();
 	}
 	
 	private void initComponents() {
@@ -106,6 +108,27 @@ public class ActualizarPanel extends JPanel {
                     .addComponent(btnActualizar))
                 .addGap(33, 33, 33))
         );
+	}
+	
+	private void updateEnableState() { 
+		btnBuscar.setEnabled(!isEditing);
+		txtFieldCod.setEnabled(!isEditing);
+		
+		btnActualizar.setEnabled(isEditing);
+		txtFieldNombre.setEnabled(isEditing);
+	    txtFieldAnios.setEnabled(isEditing);
+	    txtFieldCreador.setEnabled(isEditing);
+	    txtFieldFecha.setEnabled(isEditing);
+	    txtFieldHabilidad.setEnabled(isEditing);
+	}
+	
+	public void setEditing(boolean isEditing) {
+		this.isEditing = isEditing;
+		updateEnableState();
+	}
+	
+	public boolean isEditing() {
+		return isEditing;
 	}
 	
 	public JTextField getTxtFieldNombre() {
