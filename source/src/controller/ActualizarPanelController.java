@@ -79,7 +79,6 @@ public class ActualizarPanelController {
 	        	view.setEditing(true);
 	        }
 	    }
-		
-		
+			
 	}
 }

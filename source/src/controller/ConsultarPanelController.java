@@ -1,10 +1,11 @@
 package controller;
 
 import java.awt.event.ActionEvent;
-
+import java.util.List;
 import javax.swing.JOptionPane;
 
 import access.EscuelaDAO;
+import model.EscuelaModel;
 import utils.FieldUtils;
 import view.ConsultarPanel;
 
@@ -23,12 +24,14 @@ public class ConsultarPanelController {
         if (codigo_consultar.isBlank() || FieldUtils.isEmpty(codigo_consultar)) {
             JOptionPane.showMessageDialog(null,"No se permite campo vacio","ALERTA",JOptionPane.WARNING_MESSAGE);
         } else if(!FieldUtils.isNumber(codigo_consultar)) {
-        	JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE);
-        } else if(!repo.exist(Integer.parseInt(codigo_consultar))) {
-        	JOptionPane.showMessageDialog(null,"Escuela con el codigo "+codigo_consultar+" no existe en el sistema","ALERTA",JOptionPane.WARNING_MESSAGE);
+        	JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE); 
         } else {
-        	//view.getTxtFieldAnios().setText(Integer.toString(result.getAnios_servicio()));
-        	view.getTxtFieldCod().setText(""); 
+        	List<EscuelaModel> result = repo.findAllLikeId(Integer.parseInt(codigo_consultar));
+        	for(EscuelaModel registro : result) {
+        		//view.addRow.getString(registro);
+        		
+        	}
+        	
         }
 	}
 }
