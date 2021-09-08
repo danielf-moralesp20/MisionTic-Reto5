@@ -79,10 +79,10 @@ public class EscuelaModel {
 		Vector<String> vectorRows = new Vector<>();
 		vectorRows.add(String.valueOf(codigo_escuela));
 		vectorRows.add(nombre_escuela);
-		vectorRows.add(habilidad);
 		vectorRows.add(String.valueOf(anios_servicio));
-		vectorRows.add(creador);
 		vectorRows.add(String.valueOf(fecha_inicio));
+		vectorRows.add(habilidad);
+		vectorRows.add(creador);
         return vectorRows;
 	}
 }
