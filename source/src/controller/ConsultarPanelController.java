@@ -1,8 +1,12 @@
 package controller;
 
 import java.awt.event.ActionEvent;
+//import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
+
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import access.EscuelaDAO;
 import model.EscuelaModel;
@@ -27,11 +31,16 @@ public class ConsultarPanelController {
         	JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE); 
         } else {
         	List<EscuelaModel> result = repo.findAllLikeId(Integer.parseInt(codigo_consultar));
-        	for(EscuelaModel registro : result) {
-        		//view.addRow.getString(registro);
-        		
+        	DefaultTableModel model = (DefaultTableModel)view.getTable().getModel();
+        	if (result!=null) {
+        		model.setRowCount(0);
+        		for(EscuelaModel registro : result) {
+        			Vector<?> vectorRegistro = registro.toArray();
+        			model.addRow(vectorRegistro);
+        		}
+        	} else {
+        		model.setRowCount(0);
         	}
-        	
-        }
+        }	
 	}
 }

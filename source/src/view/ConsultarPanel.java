@@ -69,6 +69,9 @@ public class ConsultarPanel extends JPanel {
                 .addContainerGap())
         );
 	}
+	public JTable getTable() {
+		return table;
+	}
 	
 	public JTextField getTxtFieldCod() {
 		return txtFieldCod;
