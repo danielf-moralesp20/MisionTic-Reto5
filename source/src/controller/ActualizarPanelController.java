@@ -41,6 +41,7 @@ public class ActualizarPanelController {
 	    	boolean success = repo.updateById(nueva);
 	    	
 	    	if(success) {
+	    		JOptionPane.showMessageDialog(null,"Escuela actualizada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
 	    		view.getTxtFieldCod().setText("");
 	    		view.getTxtFieldAnios().setText("");
 	        	view.getTxtFieldCreador().setText("");
@@ -48,10 +49,7 @@ public class ActualizarPanelController {
 	        	view.getTxtFieldHabilidad().setText("");
 	        	view.getTxtFieldNombre().setText("");
 	        	view.setEditing(false);
-	        	
-	    		JOptionPane.showMessageDialog(null,"Escuela actualizada con exito","OK",JOptionPane.INFORMATION_MESSAGE);
-	    	}
-	    	else
+	    	} else
 	    		JOptionPane.showMessageDialog(null,"Algo ha salido mal y no se ha podido actualizar el registro","ALERTA",JOptionPane.WARNING_MESSAGE);
 	    }
 	}
@@ -59,7 +57,6 @@ public class ActualizarPanelController {
 	public void actionEventBtnBuscar(ActionEvent evt) {
 		String cod = view.getTxtFieldCod().getText();
 	     
-
 	    if (FieldUtils.isEmpty(cod)) {
 	        JOptionPane.showMessageDialog(null,"Por favor, ingrese un codigo a buscar","ALERTA",JOptionPane.WARNING_MESSAGE);
 	    } else if(!FieldUtils.isNumber(cod)) {

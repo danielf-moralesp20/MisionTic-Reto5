@@ -42,7 +42,16 @@ public class CrearPanelController {
         	boolean success = repo.save(escuelaCrear);
         	if (success) {
         		JOptionPane.showMessageDialog(null,"El registro con numero "+codigo_crear+" ha sido creado exitosamente","ALERTA",JOptionPane.INFORMATION_MESSAGE);
+        		view.getTxtFieldCod().setText("");
+        		view.getTxtFieldAnios().setText("");
+        		view.getTxtFieldFecha().setText("");
+        		view.getTxtFieldNombre().setText("");
+        		view.getTxtFieldHabilidad().setText("");
+        		view.getTxtFieldCreador().setText("");
+        		
+        	} else {
+    	    	JOptionPane.showMessageDialog(null,"Algo ha salido mal. Intentalo de nuevo","ALERTA",JOptionPane.WARNING_MESSAGE);
         	}
         }
-	}
+    }
 }

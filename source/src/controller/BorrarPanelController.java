@@ -23,9 +23,9 @@ public class BorrarPanelController {
         if (FieldUtils.isEmpty(cod))
             JOptionPane.showMessageDialog(null,"No se permiten campos vacios", "ALERTA", JOptionPane.WARNING_MESSAGE);
         else if (!FieldUtils.isNumber(cod)) 
-        	JOptionPane.showMessageDialog(null, "Tipo de dato incorrecto. Ingresa un codigo de escuela correcto.", "ALERTA", JOptionPane.WARNING_MESSAGE);
+        	JOptionPane.showMessageDialog(null, "Tipo de dato incorrecto. Intentalo de nuevo", "ALERTA", JOptionPane.WARNING_MESSAGE);
         else if (!repo.exist(Integer.parseInt(cod)))
-        	JOptionPane.showMessageDialog(null, "Lo sentimos pero ho hemos encontrado ningun registro con el codigo " + cod, "ALERTA", JOptionPane.WARNING_MESSAGE);
+        	JOptionPane.showMessageDialog(null, "Lo sentimos, no hemos encontrado el registro con el codigo " + cod, "ALERTA", JOptionPane.WARNING_MESSAGE);
         else {
         	boolean success = repo.deleteById(Integer.parseInt(cod));
         	if (success) {
@@ -33,7 +33,7 @@ public class BorrarPanelController {
         		view.getTxtFieldCod().setText("");
         	}
         	else      		
-        		JOptionPane.showMessageDialog(null,"Lo sentimos, parece que algo ha salido mal y no hemos podido eliminar el registro","ALERTA",JOptionPane.INFORMATION_MESSAGE);
+        		JOptionPane.showMessageDialog(null,"Lo sentimos, parece que algo ha salido mal. Intentalo nuevamente","ALERTA",JOptionPane.INFORMATION_MESSAGE);
         }
     }
 }

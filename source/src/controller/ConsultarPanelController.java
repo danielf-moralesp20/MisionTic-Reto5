@@ -25,10 +25,10 @@ public class ConsultarPanelController {
         } else if(!FieldUtils.isNumber(codigo_consultar)) {
         	JOptionPane.showMessageDialog(null,"Tipo de dato erroneo","ALERTA",JOptionPane.WARNING_MESSAGE);
         } else if(!repo.exist(Integer.parseInt(codigo_consultar))) {
-        	JOptionPane.showMessageDialog(null,"Escuela con el codigo "+codigo_consultar+"existe en el sistema","ALERTA",JOptionPane.WARNING_MESSAGE);
-      
+        	JOptionPane.showMessageDialog(null,"Escuela con el codigo "+codigo_consultar+" no existe en el sistema","ALERTA",JOptionPane.WARNING_MESSAGE);
         } else {
-            
+        	//view.getTxtFieldAnios().setText(Integer.toString(result.getAnios_servicio()));
+        	view.getTxtFieldCod().setText(""); 
         }
 	}
 }
