@@ -21,6 +21,7 @@ public class ConsultarPanel extends JPanel {
 	public ConsultarPanel() {
 		controller = new ConsultarPanelController(this);
 		initComponents();
+		controller.PredeterminedTable(this);
 	}
 	
 	private void initComponents() {
@@ -36,6 +37,7 @@ public class ConsultarPanel extends JPanel {
         scrollPane.setViewportView(table);
         
         txtFieldCod = new JTextField();
+       
 	
         GroupLayout jPanel4Layout = new GroupLayout(this);
         setLayout(jPanel4Layout);
